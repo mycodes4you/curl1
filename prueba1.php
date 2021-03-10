@@ -17,7 +17,8 @@ $BODY.= '--'.$BOUNDARY. $eol; // start 2nd param,
 $BODY.= 'Content-Disposition: form-data; name="archivo"; filename="DF7344-24f4bf23-c831-4421-835c-3f0b9385119a.xml"'. $eol ; //first Content data for post file, remember you only put 1 when you are going to add more Contents, and 2 on the last, to close the Content Instance
 $BODY.= 'Content-Type: application/octet-stream' . $eol; //Same before row
 $BODY.= 'Content-Transfer-Encoding: base64' . $eol . $eol; // we put the last Content and 2 $eol,
-$BODY.= chunk_split(base64_encode(file_get_contents($file_url))) . $eol; // we write the Base64 File Content and the $eol to finish the data,
+//$BODY.= chunk_split(base64_encode(file_get_contents($file_url))) . $eol; // we write the Base64 File Content and the $eol to finish the data,
+$BODY.= chunk_split(file_get_contents($file_url)) . $eol; // we write the Base64 File Content and the $eol to finish the data,
 $BODY.= '--'.$BOUNDARY .'--' . $eol. $eol; // we close the param and the post width "--" and 2 $eol at the end of our boundary header.
        
 $ch = curl_init(); //init curl
