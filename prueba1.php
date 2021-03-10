@@ -35,7 +35,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, $BODY); // set our $BODY
 
 $response = curl_exec($ch); // start curl navigation
 
-if(var_dump(http_response_code()) == 'int(200)' ){
+if(http_response_code() == '200' ){
  echo 'El Archivo se recibio de manera correcta';
 } 
 
