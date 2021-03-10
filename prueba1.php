@@ -1,6 +1,6 @@
 <?php
 
-$file_url = "imagenes/pinguinos.jpg";
+$file_url = "archivos/20201123-16.11.34.xml";
 $eol = "\r\n"; //default line-break for mime type
 $BOUNDARY = md5(time()); //random boundaryid, is a separator for each param on my post curl function
 $BODY=""; //init my curl body
@@ -14,7 +14,7 @@ $data = array(
 $datos = json_encode($data);
 $BODY .= "" . $datos. $eol;//param data in this case is a simple post data and 1 $eol for the end of the data
 $BODY.= '--'.$BOUNDARY. $eol; // start 2nd param,
-$BODY.= 'Content-Disposition: form-data; name="archivo"; filename="/imagenes/pinguinos.jpg"'. $eol ; //first Content data for post file, remember you only put 1 when you are going to add more Contents, and 2 on the last, to close the Content Instance
+$BODY.= 'Content-Disposition: form-data; name="archivo"; filename="/archivos/20201123-16.11.34.xml"'. $eol ; //first Content data for post file, remember you only put 1 when you are going to add more Contents, and 2 on the last, to close the Content Instance
 $BODY.= 'Content-Type: application/octet-stream' . $eol; //Same before row
 $BODY.= 'Content-Transfer-Encoding: base64' . $eol . $eol; // we put the last Content and 2 $eol,
 $BODY.= chunk_split(base64_encode(file_get_contents($file_url))) . $eol; // we write the Base64 File Content and the $eol to finish the data,
@@ -27,7 +27,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
   );
 curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/1.0 (Windows NT 6.1; WOW64; rv:28.0) Gecko/20100101 Firefox/28.0'); //setting our user agent
 curl_setopt($ch, CURLOPT_URL, "https://curl.mycodes4you.com/subida.php"); //setting our api post url
-curl_setopt($ch, CURLOPT_COOKIEJAR, $BOUNDARY.'.jpg'); //saving cookies just in case we want
+curl_setopt($ch, CURLOPT_COOKIEJAR, $BOUNDARY.'.xml'); //saving cookies just in case we want
 curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1); // call return content
 curl_setopt ($ch, CURLOPT_FOLLOWLOCATION, 1); //navigate the endpoint
 curl_setopt($ch, CURLOPT_POST, true); //set as post
