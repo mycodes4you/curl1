@@ -17,7 +17,7 @@ if(!empty($_FILES)){
 }*/
 
 
-$dir_subida = '/subidas/';
+$dir_subida = 'subidas/';
 $fichero_subido = $dir_subida . basename($_FILES['archivo']['name']);
 
 echo '<pre>';
