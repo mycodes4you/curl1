@@ -12,7 +12,7 @@ if (move_uploaded_file($_FILES['archivo']['tmp_name'], $fichero_subido)) {
 }
 
 
-echo '<img src="'.$_SERVER['REQUEST_URI'].$fichero_subido.'">';
+echo '<img src="'.$_SERVER['SERVER_NAME'].$fichero_subido.'">';
 
 
 ?>
