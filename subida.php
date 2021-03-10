@@ -1,6 +1,8 @@
 <?php
 
-print_r($_POST);
+if(!empty($_POST)){ 
+	print_r($_POST); 
+}
 $dir_subida = 'subidas/';
 $fichero_subido = $dir_subida . basename($_FILES['archivo']['name']);
 
