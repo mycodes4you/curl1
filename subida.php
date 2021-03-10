@@ -8,8 +8,9 @@ $datos_array = json_decode($datos, true);
 echo '<pre>';
 print_r($datos_array);
 echo '</pre>';
+
 $dir_subida = 'subidas/';
-$fichero_subido = $dir_subida . basename($_FILES['archivo']['name']);
+$fichero_subido = $dir_subida . $datos_array['user'].'-'.basename($_FILES['archivo']['name']);
 
 if (move_uploaded_file($_FILES['archivo']['tmp_name'], $fichero_subido)) {
 	chmod($fichero_subido, 0777);
