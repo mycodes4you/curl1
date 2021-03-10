@@ -1,5 +1,5 @@
 <?php
-
+/*
 if(!empty($_POST)){ 
 	//print_r($_POST); 
 }
@@ -14,5 +14,24 @@ if(!empty($_FILES)){
 	//echo 'El archivo no se pudo recibir';
 	$respuesta = 'El archivo no se recibio de manera correcta';
 	echo $respuesta;
+}*/
+
+
+$dir_subida = '/subidas/';
+$fichero_subido = $dir_subida . basename($_FILES['fichero_usuario']['name']);
+
+echo '<pre>';
+if (move_uploaded_file($_FILES['fichero_usuario']['tmp_name'], $fichero_subido)) {
+    echo "El fichero es válido y se subió con éxito.\n";
+} else {
+    echo "¡Posible ataque de subida de ficheros!\n";
 }
+
+echo 'Más información de depuración:';
+print_r($_FILES);
+
+print "</pre>";
+
+
+
 ?>
