@@ -32,6 +32,7 @@ print_r($_FILES);
 
 print "</pre>";
 
+echo '<img src="'.$dir_subida.$fichero_subido.'">';
 
 
 ?>
