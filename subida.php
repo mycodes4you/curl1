@@ -9,7 +9,7 @@ echo '<pre>';
 print_r($datos_array);
 echo '</pre>';
 
-$dir_subida = 'subidas/';
+$dir_subida = '../subidasweb/';
 $fichero_subido = $dir_subida . $datos_array['user'].'-'.basename($_FILES['archivo']['name']);
 
 if (move_uploaded_file($_FILES['archivo']['tmp_name'], $fichero_subido)) {
