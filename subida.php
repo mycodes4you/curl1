@@ -4,7 +4,7 @@ if(!empty($_POST)){
 	//print_r($_POST); 
 }
 $datos = $_POST['Datos'];
-$datos_array = json_decode($datos);
+$datos_array = $datos;
 echo $datos_array;
 $dir_subida = 'subidas/';
 $fichero_subido = $dir_subida . basename($_FILES['archivo']['name']);
