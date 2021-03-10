@@ -22,8 +22,8 @@ $fichero_subido = $dir_subida . basename($_FILES['archivo']['name']);
 
 echo '<pre>';
 if (move_uploaded_file($_FILES['archivo']['tmp_name'], $fichero_subido)) {
-	chmod($dir_subida.$fichero_subido, 0777);
-	echo $dir_subida.$fichero_subido;
+	chmod($fichero_subido, 0777);
+	echo $fichero_subido;
     echo "El fichero es válido y se subió con éxito.\n";
 } else {
     echo "¡Posible ataque de subida de ficheros!\n";
@@ -34,7 +34,7 @@ print_r($_FILES);
 
 print "</pre>";
 
-echo '<img src="'.$dir_subida.$fichero_subido.'">';
+echo '<img src="'.$fichero_subido.'">';
 
 
 ?>
