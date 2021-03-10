@@ -1,7 +1,7 @@
 <?php
 
 //$file_url = "archivos/DF7344-24f4bf23-c831-4421-835c-3f0b9385119a.xml";
-$file_url = "imagenes/pinguino.jpg";
+$file_url = "images/pinguino.jpg";
 $eol = "\r\n"; //default line-break for mime type
 $BOUNDARY = md5(time()); //random boundaryid, is a separator for each param on my post curl function
 $BODY=""; //init my curl body
