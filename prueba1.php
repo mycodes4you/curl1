@@ -35,7 +35,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, $BODY); // set our $BODY
 
 $response = curl_exec($ch); // start curl navigation
 
-print_r($response);
+echo json_decode($response);
 
 
 ?>
