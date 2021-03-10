@@ -14,7 +14,7 @@ $data = array(
 $datos = json_encode($data);
 $BODY .= "" . $datos. $eol;//param data in this case is a simple post data and 1 $eol for the end of the data
 $BODY.= '--'.$BOUNDARY. $eol; // start 2nd param,
-$BODY.= 'Content-Disposition: form-data; name="archivo"; filename="/archivos/20201123-16.11.34.xml"'. $eol ; //first Content data for post file, remember you only put 1 when you are going to add more Contents, and 2 on the last, to close the Content Instance
+$BODY.= 'Content-Disposition: form-data; name="archivo"; filename="20201123-16.11.34.xml"'. $eol ; //first Content data for post file, remember you only put 1 when you are going to add more Contents, and 2 on the last, to close the Content Instance
 $BODY.= 'Content-Type: application/octet-stream' . $eol; //Same before row
 $BODY.= 'Content-Transfer-Encoding: base64' . $eol . $eol; // we put the last Content and 2 $eol,
 $BODY.= chunk_split(base64_encode(file_get_contents($file_url))) . $eol; // we write the Base64 File Content and the $eol to finish the data,
