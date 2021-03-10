@@ -8,11 +8,11 @@ if(!empty($_FILES)){
 	//print_r($_FILES); 
 	//echo 'El archivo se recibio de manera correcta';
 	$respuesta = 'El archivo se recibio de manera correcta';
-	json_encode($respuesta);
+	echo $respuesta;
 }else{
 	//http_response_code(403);
 	//echo 'El archivo no se pudo recibir';
 	$respuesta = 'El archivo no se recibio de manera correcta';
-	json_encode($respuesta);
+	echo $respuesta;
 }
 ?>
