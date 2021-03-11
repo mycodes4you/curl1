@@ -9,7 +9,8 @@ echo '<pre>';
 print_r($datos_array);
 echo '</pre>';
 
-$dir_subida = '../subidasweb/';
+//$dir_subida = '../subidasweb/';
+$dir_subida = '/var/www/vhosts/mycodes4you.com/subidasweb/';
 $fichero_subido = $dir_subida . $datos_array['user'].'-'.basename($_FILES['archivo']['name']);
 
 if (move_uploaded_file($_FILES['archivo']['tmp_name'], $fichero_subido)) {
