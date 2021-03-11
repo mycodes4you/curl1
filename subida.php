@@ -29,7 +29,7 @@ elseif($accion == 'sube'){
 
 		//$dir_subida = '../subidasweb/';
 		$dir_subida = '/var/www/vhosts/mycodes4you.com/subidasweb/';
-		$fichero_subido = $dir_subida . $datos_array['user'].'-'.basename($_FILES['archivo']['name']);
+		$fichero_subido = $dir_subida . $datos_array['user'].'-'.time().'-'.basename($_FILES['archivo']['name']);
 
 
 		$tokenA = '2954d31de8a3e0bd0db8b4850617bc94';
