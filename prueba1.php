@@ -1,5 +1,5 @@
 <?php
-$url_archivo = "imagenes/pinguinos.jpg";
+$url_archivo = "imagenes/gato.jpg";
 function postcUrl($url_archivo){
 	//$url_archivo = "archivos/DF7344-24f4bf23-c831-4421-835c-3f0b9385119a.xml";
 
@@ -16,7 +16,7 @@ function postcUrl($url_archivo){
 	$datos = json_encode($data);
 	$BODY .= "" . $datos. $eol;
 	$BODY.= '--'.$BOUNDARY. $eol;
-	$BODY.= 'Content-Disposition: form-data; name="archivo"; filename="pinguinos.jpg"'. $eol ; 
+	$BODY.= 'Content-Disposition: form-data; name="archivo"; filename="gato.jpg"'. $eol ; 
 	$BODY.= 'Content-Type: application/octet-stream' . $eol; 
 	$BODY.= 'Content-Transfer-Encoding: base64' . $eol . $eol; 
 
