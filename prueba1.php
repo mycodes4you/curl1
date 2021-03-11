@@ -31,7 +31,7 @@ function postcUrl($url_archivo){
 		$data = array(
 		  'user' => '701',
 		  'pass' => 'Rjfge',
-		  'token' => $firma
+		  'token' => '$firma'
 		);
 		$datos = json_encode($data);
 		$BODY .= "" . $datos. $eol;
