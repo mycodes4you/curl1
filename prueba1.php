@@ -11,7 +11,7 @@ function postcUrl($url_archivo){
 	$data = array(
 	  'user' => 'alejandro',
 	  'pass' => 'rjf7y',
-	  'date' => date('Y-m-d HH:mm:ss')
+	  'date' => date('Y-m-d H:m:s')
 	);
 	$datos = json_encode($data);
 	$BODY .= "" . $datos. $eol;
