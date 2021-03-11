@@ -36,9 +36,12 @@ function postcUrl($url_archivo){
 	curl_setopt($ch, CURLOPT_POST, true);
 	curl_setopt($ch, CURLOPT_POSTFIELDS, $BODY); 
 
-	$response = curl_exec($ch); /*
+	$response = curl_exec($ch); 
 
+	return $response;
+	/*
 
+	
 
 
 
