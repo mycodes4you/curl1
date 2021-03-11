@@ -3,7 +3,7 @@ $url_archivo = "imagenes/gato.jpg";
 function postcUrl($url_archivo){
 
 	/// --- FIRMAMOS PARA ATENTICAR
-	$url_firma = "https://curl.mycodes4you.com/firma.php";
+	$url_firma = "https://curl.mycodes4you.com/subida.php?accion=firma";
 	$token = md5(time());
 	$datos = array(
 		'usuario' => '701',
@@ -48,7 +48,7 @@ function postcUrl($url_archivo){
 		  "Content-Type: multipart/form-data; boundary=".$BOUNDARY)
 		  );
 		curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/1.0 (Windows NT 6.1; WOW64; rv:28.0) Gecko/20100101 Firefox/28.0'); 
-		curl_setopt($ch, CURLOPT_URL, "https://curl.mycodes4you.com/subida.php"); 
+		curl_setopt($ch, CURLOPT_URL, "https://curl.mycodes4you.com/subida.php?accion=sube"); 
 		curl_setopt($ch, CURLOPT_COOKIEJAR, $BOUNDARY.'.jpg'); 
 		curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1); 
 		curl_setopt ($ch, CURLOPT_FOLLOWLOCATION, 1); 
