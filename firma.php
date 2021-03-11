@@ -5,15 +5,16 @@ foreach($_GET as $k => $v){$$k=$v;} // echo $k.' -> '.$v.' | ';
 if(!empty($_POST)){ 
 	//print_r($_POST); 
 	if($usuario == '701' && $pass = 'Rjfge'){
-		$token = md5(time());
-		echo $token;
+		//$token = md5(time());
+		$token = '2954d31de8a3e0bd0db8b4850617bc94';
+		//echo $token;
 	}
 	else{
-		echo 'Error, el usuario no es valido';
+		echo '403';
 	}
 }
 else{
-	echo 'Error, no se recibieron datos.';
+	echo '404';
 }
 
 ?>

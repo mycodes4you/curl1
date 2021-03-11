@@ -18,92 +18,50 @@ function postcUrl($url_archivo){
 	$firma = curl_exec ($ch);
 	curl_close ($ch);
 
-	return $firma;
+
 
 	//$url_archivo = "archivos/DF7344-24f4bf23-c831-4421-835c-3f0b9385119a.xml";
-	/*$token = md5(time());
 
-	$eol = "\r\n";
-	$BOUNDARY = md5(time()); 
-	$BODY=""; 
-	$BODY.= '--'.$BOUNDARY. $eol; 
-	$BODY .= 'Content-Disposition: form-data; name="Datos"' . $eol . $eol; 
-	$data = array(
-	  'token' => $token,
-	  'usuario' => '701',
-	  'pass' => 'Rjfge'
-	);
-	$datos = json_encode($data);
-	$BODY .= "" . $datos. $eol;
-	$BODY.= '--'.$BOUNDARY. $eol;
-	/*$BODY.= 'Content-Disposition: form-data; name="archivo"; filename="gato.jpg"'. $eol ; 
-	$BODY.= 'Content-Type: application/octet-stream' . $eol; 
-	$BODY.= 'Content-Transfer-Encoding: base64' . $eol . $eol; 
+	if($firma != '404' OR $firma != '403'){
+		$eol = "\r\n";
+		$BOUNDARY = md5(time()); 
+		$BODY=""; 
+		$BODY.= '--'.$BOUNDARY. $eol; 
+		$BODY .= 'Content-Disposition: form-data; name="Datos"' . $eol . $eol; 
+		$data = array(
+		  'user' => 'alex',
+		  'pass' => 'rjf7y',
+		  'token' => $firma
+		);
+		$datos = json_encode($data);
+		$BODY .= "" . $datos. $eol;
+		$BODY.= '--'.$BOUNDARY. $eol;
+		$BODY.= 'Content-Disposition: form-data; name="archivo"; filename="gato.jpg"'. $eol ; 
+		$BODY.= 'Content-Type: application/octet-stream' . $eol; 
+		$BODY.= 'Content-Transfer-Encoding: base64' . $eol . $eol; 
 
-	$BODY.= file_get_contents($url_archivo) . $eol; */
-	/*$BODY.= '--'.$BOUNDARY .'--' . $eol. $eol;        
-	$ch = curl_init(); 
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-	  'X_PARAM_TOKEN : 71e2cb8b-42b7-4bf0-b2e8-53fbd2f578f9',
-	  "Content-Type: multipart/form-data; boundary=".$BOUNDARY)
-	  );
-	curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/1.0 (Windows NT 6.1; WOW64; rv:28.0) Gecko/20100101 Firefox/28.0'); 
-	curl_setopt($ch, CURLOPT_URL, "https://curl.mycodes4you.com/firmar.php"); 
-	curl_setopt($ch, CURLOPT_COOKIEJAR, $BOUNDARY); 
-	curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1); 
-	curl_setopt ($ch, CURLOPT_FOLLOWLOCATION, 1); 
-	curl_setopt($ch, CURLOPT_POST, true);
-	curl_setopt($ch, CURLOPT_POSTFIELDS, $BODY); 
+		$BODY.= file_get_contents($url_archivo) . $eol; 
+		$BODY.= '--'.$BOUNDARY .'--' . $eol. $eol;        
+		$ch = curl_init(); 
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+		  'X_PARAM_TOKEN : 71e2cb8b-42b7-4bf0-b2e8-53fbd2f578f9',
+		  "Content-Type: multipart/form-data; boundary=".$BOUNDARY)
+		  );
+		curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/1.0 (Windows NT 6.1; WOW64; rv:28.0) Gecko/20100101 Firefox/28.0'); 
+		curl_setopt($ch, CURLOPT_URL, "https://curl.mycodes4you.com/subida.php"); 
+		curl_setopt($ch, CURLOPT_COOKIEJAR, $BOUNDARY.'.jpg'); 
+		curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1); 
+		curl_setopt ($ch, CURLOPT_FOLLOWLOCATION, 1); 
+		curl_setopt($ch, CURLOPT_POST, true);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $BODY); 
 
-	$response = curl_exec($ch); 
-
-	return $response;*/
-	/*
-
-	
-
-
-
-
-
-	$eol = "\r\n";
-	$BOUNDARY = md5(time()); 
-	$BODY=""; 
-	$BODY.= '--'.$BOUNDARY. $eol; 
-	$BODY .= 'Content-Disposition: form-data; name="Datos"' . $eol . $eol; 
-	$data = array(
-	  'user' => 'alex',
-	  'pass' => 'rjf7y',
-	  'date' => date('Y-m-d H:m:s')
-	);
-	$datos = json_encode($data);
-	$BODY .= "" . $datos. $eol;
-	$BODY.= '--'.$BOUNDARY. $eol;
-	$BODY.= 'Content-Disposition: form-data; name="archivo"; filename="gato.jpg"'. $eol ; 
-	$BODY.= 'Content-Type: application/octet-stream' . $eol; 
-	$BODY.= 'Content-Transfer-Encoding: base64' . $eol . $eol; 
-
-	$BODY.= file_get_contents($url_archivo) . $eol; 
-	$BODY.= '--'.$BOUNDARY .'--' . $eol. $eol;        
-	$ch = curl_init(); 
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-	  'X_PARAM_TOKEN : 71e2cb8b-42b7-4bf0-b2e8-53fbd2f578f9',
-	  "Content-Type: multipart/form-data; boundary=".$BOUNDARY)
-	  );
-	curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/1.0 (Windows NT 6.1; WOW64; rv:28.0) Gecko/20100101 Firefox/28.0'); 
-	curl_setopt($ch, CURLOPT_URL, "https://curl.mycodes4you.com/subida.php"); 
-	curl_setopt($ch, CURLOPT_COOKIEJAR, $BOUNDARY.'.jpg'); 
-	curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1); 
-	curl_setopt ($ch, CURLOPT_FOLLOWLOCATION, 1); 
-	curl_setopt($ch, CURLOPT_POST, true);
-	curl_setopt($ch, CURLOPT_POSTFIELDS, $BODY); 
-
-	$response = curl_exec($ch); 
+		$response = curl_exec($ch); 
+	}
+	else{
+		$response = 'No se puedo validar el usuario'
+	}
 
 	return $response;
-*/
-
-
 
 }
 
