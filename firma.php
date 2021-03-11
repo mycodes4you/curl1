@@ -7,7 +7,7 @@ if(!empty($_POST)){
 	if($usuario == '701' && $pass = 'Rjfge'){
 		//$token = md5(time());
 		$token = '2954d31de8a3e0bd0db8b4850617bc94';
-		//echo $token;
+		echo $token;
 	}
 	else{
 		echo '403';
