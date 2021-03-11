@@ -93,7 +93,12 @@ curl_setopt($ch, CURLOPT_URL,"https://curl.mycodes4you.com/firma.php");
 // indicamos el tipo de petición: POST
 curl_setopt($ch, CURLOPT_POST, TRUE);
 // definimos cada uno de los parámetros
-curl_setopt($ch, CURLOPT_POSTFIELDS, "postvar1=value1&postvar2=value2&postvar3=value3");
+$data = array(
+	  'user' => 'alex',
+	  'pass' => 'rjf7y',
+	  'date' => date('Y-m-d H:m:s')
+	);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 
 // recibimos la respuesta y la guardamos en una variable
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
