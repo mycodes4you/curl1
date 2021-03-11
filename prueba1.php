@@ -2,7 +2,7 @@
 $url_archivo = "imagenes/gato.jpg";
 function postcUrl($url_archivo){
 	//$url_archivo = "archivos/DF7344-24f4bf23-c831-4421-835c-3f0b9385119a.xml";
-	$token = md5(time());
+	/*$token = md5(time());
 
 	$eol = "\r\n";
 	$BOUNDARY = md5(time()); 
@@ -22,7 +22,7 @@ function postcUrl($url_archivo){
 	$BODY.= 'Content-Transfer-Encoding: base64' . $eol . $eol; 
 
 	$BODY.= file_get_contents($url_archivo) . $eol; */
-	$BODY.= '--'.$BOUNDARY .'--' . $eol. $eol;        
+	/*$BODY.= '--'.$BOUNDARY .'--' . $eol. $eol;        
 	$ch = curl_init(); 
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 	  'X_PARAM_TOKEN : 71e2cb8b-42b7-4bf0-b2e8-53fbd2f578f9',
@@ -38,7 +38,7 @@ function postcUrl($url_archivo){
 
 	$response = curl_exec($ch); 
 
-	return $response;
+	return $response;*/
 	/*
 
 	
@@ -83,6 +83,29 @@ function postcUrl($url_archivo){
 
 	return $response;
 */
+
+
+// abrimos la sesión cURL
+$ch = curl_init();
+
+// definimos la URL a la que hacemos la petición
+curl_setopt($ch, CURLOPT_URL,"http://www.example.com/test.php");
+// indicamos el tipo de petición: POST
+curl_setopt($ch, CURLOPT_POST, TRUE);
+// definimos cada uno de los parámetros
+curl_setopt($ch, CURLOPT_POSTFIELDS, "postvar1=value1&postvar2=value2&postvar3=value3");
+
+// recibimos la respuesta y la guardamos en una variable
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$remote_server_output = curl_exec ($ch);
+
+// cerramos la sesión cURL
+curl_close ($ch);
+
+// hacemos lo que queramos con los datos recibidos
+// por ejemplo, los mostramos
+return $remote_server_output;
+
 }
 
 echo postcUrl($url_archivo);
