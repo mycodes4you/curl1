@@ -29,8 +29,8 @@ function postcUrl($url_archivo){
 		$BODY.= '--'.$BOUNDARY. $eol; 
 		$BODY .= 'Content-Disposition: form-data; name="Datos"' . $eol . $eol; 
 		$data = array(
-		  'user' => 'alex',
-		  'pass' => 'rjf7y',
+		  'user' => '701',
+		  'pass' => 'Rjfge',
 		  'token' => $firma
 		);
 		$datos = json_encode($data);
