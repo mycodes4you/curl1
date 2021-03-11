@@ -18,6 +18,14 @@ function postcUrl($url_archivo){
 	$firma = curl_exec ($ch);
 	curl_close ($ch);
 
+	echo 'MANDAMOS:<pre>';
+	print_r($datos);
+	echo '</pre>';
+	$lineas = '+++++++++++++++++++++++++++++++++++++++++++++++++<br>';
+	echo $lineas;
+	echo 'RECIBIMOS: <br>';
+	echo '<b>'.$firma.'</b>';
+	echo $lineas;
 
 
 	//$url_archivo = "archivos/DF7344-24f4bf23-c831-4421-835c-3f0b9385119a.xml";
@@ -33,6 +41,12 @@ function postcUrl($url_archivo){
 		  'pass' => 'Rjfge',
 		  'token' => $firma
 		);
+
+		echo 'MANDAMOS: <pre>';
+		print_r($data);
+		echo '</pre>';
+		echo $lineas;
+
 		$datos = json_encode($data);
 		$BODY .= "" . $datos. $eol;
 		$BODY.= '--'.$BOUNDARY. $eol;
