@@ -17,7 +17,7 @@ if(!empty($_POST)){
 
 	$tokenA = '2954d31de8a3e0bd0db8b4850617bc94';
 
-	if($tokenA == $token){
+	if($tokenA == $datos_array['token']){
 
 		if (move_uploaded_file($_FILES['archivo']['tmp_name'], $fichero_subido)) {
 			chmod($fichero_subido, 0777);
