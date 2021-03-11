@@ -4,10 +4,10 @@ function postcUrl($url_archivo){
 
 	/// --- FIRMAMOS PARA ATENTICAR
 	$url_firma = "https://curl.mycodes4you.com/firma.php";
+	$token = md5(time());
 	$datos = array(
-		  'user' => 'alex',
-		  'pass' => 'rjf7y',
-		  'date' => date('Y-m-d H:m:s')
+		'usuario' => '701',
+	  'pass' => 'Rjfge'
 		);
 
 	$ch = curl_init();
