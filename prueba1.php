@@ -9,7 +9,7 @@ function postcUrl($url_archivo){
 	$BODY.= '--'.$BOUNDARY. $eol; 
 	$BODY .= 'Content-Disposition: form-data; name="Datos"' . $eol . $eol; 
 	$data = array(
-	  'user' => 'alejandro',
+	  'user' => 'alex',
 	  'pass' => 'rjf7y',
 	  'date' => date('Y-m-d H:m:s')
 	);
