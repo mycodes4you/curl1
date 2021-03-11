@@ -58,7 +58,7 @@ function postcUrl($url_archivo){
 		$response = curl_exec($ch); 
 	}
 	else{
-		$response = 'No se puedo validar el usuario'
+		$response = 'No se puedo validar el usuario';
 	}
 
 	return $response;
