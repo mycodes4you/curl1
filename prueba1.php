@@ -24,7 +24,7 @@ function postcUrl($url_archivo){
 	$lineas = '+++++++++++++++++++++++++++++++++++++++++++++++++<br>';
 	echo $lineas;
 	echo 'RECIBIMOS: <br>';
-	echo '<b>'.$firma.'</b>';
+	echo '<b>'.$firma.'</b><br>';
 	echo $lineas;
 
 
